@@ -383,12 +383,43 @@ def round_sum(a, b, c):
 
 
 
-# Problem 14:
-# Given three ints, a b c, return True if one of b or c is "close" (differing from a by at most 1), while the other is "far", differing from both other values by 2 or more.
-# Note: abs(num) computes the absolute value of a number.
-# close_far(1, 2, 10) → True
-# close_far(1, 2, 3) → False
-# close_far(4, 1, 3) → True
+# Fibinacci
 
-def close_far(a, b, c):
-    
+def fib(n):
+    if n == 1 or n == 2:
+        y_n = 1
+        return y_n
+    else:
+        count = 3
+        y_c = 1
+        y_o = 1
+        while count <= n:
+            y_n = y_c + y_o
+            y_o = y_c
+            y_c = y_n
+            count += 1
+        return y_n
+
+for i in range (1, 10):
+    print(fib(i))
+
+print(fib(100))
+print(fib(1000))
+print(fib(100000))
+
+
+def fib_two(n):
+    if n == 1 or n == 2:
+        return 1
+    y = [None] * (n+1)
+    y[1] = 1
+    y[2] = 1
+    for i in range (3, n+1):
+        y[i] = y[i-1] + y[i-2]
+    return y[i]
+
+for i in range (1, 10):
+    print(fib_two(i))
+print(fib_two(100))
+print(fib_two(1000))
+print(fib_two(100000))
